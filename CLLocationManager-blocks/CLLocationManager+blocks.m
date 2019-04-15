@@ -431,6 +431,8 @@ CLLocationAgeFilter const kCLLocationAgeFilterNone = 0.0;
         CLLocationUpdateAuthorizationDescription description = [self authorizationDescription];
         if (description == CLLocationUpdateAuthorizationDescriptionWhenInUse) {
             [self requestWhenInUseAuthorization];
+        } else {
+            NSAssert(NO, @"Attempted to request always on location access.");
         }
     }
 #endif
